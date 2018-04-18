@@ -25,7 +25,9 @@ public class TomcatDS extends HttpServlet {
 			Context initCtx = new InitialContext();
 			Context envCtx = (Context) initCtx.lookup("java:comp/env");
 			DataSource ds = (DataSource) envCtx.lookup("jdbc/ds");
-
+			
+			System.out.println(ds);
+			
 			Connection connection = ds.getConnection();
 
 			System.out.println(connection);
